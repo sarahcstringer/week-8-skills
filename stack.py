@@ -96,8 +96,13 @@ class Stack(object):
             0
         """
 
-        while self.length() > 0:
-            self.pop()
+        # first way I wrote this, longer runtime
+        # while self.length() > 0:
+        #     self.pop()
+
+        self._list = []
+
+        
 
         return
 
@@ -117,7 +122,10 @@ class Stack(object):
             False
         """
 
-        if self.length() != 0:
-            return False
-        else:
-            return True
+        # first way I wrote this:
+        # if self.length() != 0:
+        #     return False
+        # else:
+        #     return True
+
+        return not self._list
