@@ -8,6 +8,7 @@ def string_compare(s1, s2):
 
     """
 
+
     if len(s1) != len(s2):
         return False
 
@@ -23,9 +24,11 @@ def has_exotic_animals(animals):
 
     Put runtime here:
     -----------------
-    [        O(n^2)       ]
+    [        O(n)       ]
 
     """
+    # not quite sure how the 'or' affects runtime (does it create a nested loop,
+    # in which case runtime would be O(n^2), or are the statements evaluated sequentially?)
 
     if "hippo" in animals or "platpypus" in animals:
         return True
@@ -80,9 +83,11 @@ def sum_zero_3(numbers):
 
     Put runtime here:
     -----------------
-    [               ]
+    [       O(n^3)        ]
 
     """
+    # It looks like there are three nested loops; two for the input list and one
+    # that loops through the results list.
 
     result = []
 
