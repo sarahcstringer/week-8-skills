@@ -25,7 +25,7 @@ class Node(object):
             >>> a.get_num_children()
             2
         """
-
+        
         return len(self.children)
 
 
@@ -57,7 +57,7 @@ class Tree(object):
                 return node
 
             to_visit.extend(node.children)
-            
+
     def breadth_first_search(self, data):
         """Return node object with this data, traversing the tree breadth-first.
 
