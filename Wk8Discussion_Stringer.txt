@@ -12,28 +12,28 @@ O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n)
 
 1) 
 a) Process of loading and unloading pallets onto a flatbed truck: stack
-b) Putting bottle caps on bottles of ber as they roll down an assembly line: queue
+b) Putting bottle caps on bottles of beer as they roll down an assembly line: queue
 c) Calculating the solution to the mathematical expression: stack
 
-2) Two examples of a queue: A line at the DMV, the order in which a person enters and receives a number is the order in which they are served (first in, first out)
+2) Two examples of a queue: A ticketing/queuing service, where the order in which a person enters and receives a number is the order in which they are served (first in, first out). A linked list might be a type of queue, where the first item inserted is the first that will be called (the head), and it would continue through the linked list until the last item added is reached.
 
-3) Two examples of a stack: 
+3) Two examples of a stack: a dishwashing system, where the top plate on a pile of dishes is the first one washed, and an undo function that keeps track of changes made and goes back to the most recent change when called.
 
 - Linked Lists
-1) In the given linked list, the nodes are the node objects "apple", "berry" and "cherry", each containing both a data and a next attribute. The data for each node is the string value of the data attribute ('Apple', 'Berry' and 'Cherry', respectively). The next attribute functions as a pointer indicating the next node in the linked list, and is bound to the next node object in the linked list.
+1) In the given linked list, the nodes are the node objects (the boxes split in two), "apple", "berry" and "cherry", each containing both a data and a next attribute. The data for each node is the string value inside each box ('Apple', 'Berry' and 'Cherry', respectively). The next attribute functions as a pointer indicating the next node in the linked list, and is bound to the next node object in the linked list (so the value contained in the "next" box would be the node that its attached arrow is pointing to).
 
-The head is an attribute of the linked list object, LLIST, and is bound to the first node object of the linked list, 'Apple'. There is no explicit tail attribute. Were there to be an attribute given, the appropriate node would be 'Cherry'. 
+The head is an attribute of the linked list object, LLIST, and is bound to the first node object of the linked list, 'Apple'. There is no explicit tail attribute. Were there to be a tail attribute assigned, the appropriate node for it would be 'Cherry'. 
 
-2) A singly linked list can be navigated in only one direction; pointers indicate either (and each node object in the linked list has the same type of pointer; there would not be a mix of some nodes with "next" and some with "previous" pointers).
+2) A singly linked list can be navigated in only one direction; pointers indicate one direction of visiting each node in the linked list, and the nodes cannot be visited in the reverse direction.
 
 A doubly linked list can be navigated in two directions, with pointers indicating both a "next" and a "previous" node.
 
-3) It is faster to append to a linked list if we have the tail as an attribute because we can navigate directly to that node. Without an explicit tail attribute, we would need to create a find method for the linked list object to navigate to the node that does not point to any other node to find the end of the list. The former method has a constant runtime whereas the latter has a linear runtime as the linked list needs to iterate through every item it contains.
+3) It is faster to append to a linked list if we have the tail as an attribute because we can navigate directly to that node without iterating through every other object. Without an explicit tail, we would need to create a find method to navigate to the node that does not point to any other node. The former method has a constant runtime whereas the latter has a linear runtime, as the linked list needs to iterate through every item it contains.
 
 - Trees
-1) A Breadth First Search algorithm would visit each "level" of tree (the children of the root first, followed by those nodes' children after the algorithm has visited each child of the root). Thus, the search would visit Italian, Indian, Mexican, lasagna, pizza, tikka masala and saag before reaching burrito.
+1) A Breadth First Search algorithm would visit each "level" of tree (a node's siblings before its children). Thus, the search would visit Italian, Indian, Mexican, lasagna, pizza, tikka masala and saag before reaching burrito. The appropriate data structure for implementing a breadth first search is a queue.
 
-2) A Depth First Search algorith would visit each child and would navigate the tree starting from the right side. It would visit Mexican and its children, Indian and its children, Italian, pizza, Sicilian, New York before Chicago.
+2) A Depth First Search algorithm would visit each child of a current node before its siblings, and would navigate the tree starting from the right side. The appropriate data structure to implement this would be a stack.
 
-3) A binary search tree contains nodes with only two children (one or both of which can be None); each node cannot have more than two children. The runtime for a binary search tree is log n, thus much better as workload increases. 
+3) A binary search tree contains nodes with only two children (one or both of which can be None); each node cannot have more than two children. The runtime for a binary search tree is log n, thus much better as workload increases (as long as the tree is appropriately balanced). A binary tree is helpful for searches because it divides the workload such that each node visited reduces the number of possible additional searches by half until the answer is found.
 
