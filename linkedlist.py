@@ -78,7 +78,7 @@ class LinkedList(object):
         current = self.head
 
         while current:
-            print current.data.data
+            print current.data
             current = current.next
 
         return
@@ -104,4 +104,3 @@ class LinkedList(object):
                 return current.data
             index+=1
             current = current.next
-        return False
